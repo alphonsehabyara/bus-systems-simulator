@@ -14,6 +14,9 @@ BusRoute.create!([
   {name: "Kicukiro-Gitwaza-Mumujyi", description: "It's safe but hudge traffic jam at MAGERWA. You can even spend half an hour in the jam during morning and evening."},
   {name: "Kicukiro-Nyabugogo", description: "It's safe but hudge traffic jam at MAGERWA. You can even spend half an hour in the jam during morning and evening."}
 ])
+BusStop.create!([
+  {name: "Zindiro", latitude: 30.1301, longitude: 1.9362, stop_order: nil, company_id: 2, bus_route_id: 1}
+])
 Company.create!([
   {name: "KBS", description: "KBS stands for Kigali Bus Services and it has started its operations in 2012. KBS now offer Twende Smart Cards for Daily Unlimited Pass and Monthly Unlimited Pass. Daily Unlimited Pass are available for RWF 600 and Monthly Unlimited Pass are available for RWF 10,000 and single fare paper ticket is still available for Rwf 250."},
   {name: "RFTC", description: "RFTC stands for Rwanda Federation Transport Cooperatives and it has started its operations in 2011. RFTC is the federation of transport cooperatives in Rwanda, with the vision of protecting social and economic interests of its affiliated members and increase the use of public transport services through the provision of customer-focused, safety and cost-effective passenger transport services using modern vehicles recommended in public transport policy."},

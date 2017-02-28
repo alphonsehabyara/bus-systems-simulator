@@ -1,0 +1,9 @@
+<h1> Each in Many, </h1>
+
+<h2> Ride with <%= @company.name %></h2>
+<h3> <%= @company.description %></h3>
+
+<button class="btn btn-info"><a href="<%= @company.id %>/edit">Edit</a></button>
+
+<%= button_to "Delete", "/companies/#{@company.id}", method: :delete %>
+
