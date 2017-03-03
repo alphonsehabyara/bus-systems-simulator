@@ -42,5 +42,14 @@ class CompaniesController < ApplicationController
     flash[:success] = "Company Deleted!"
     redirect_to "/companies"
   end
+
+  def search
+    search_query = params[:search_input]
+    @companies = Company.where("name ILIKE ? OR description ILIKE ?", "%#{search_query}%", "%#{search_query}%")
+    if @companies.empty?
+      flash[:info] = "No Company found"
+    end
+    render :index
+  end
   
 end

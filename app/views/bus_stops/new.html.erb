@@ -1,12 +1,20 @@
-<h3> New Bus route is being added </h3>
-<%= form_tag "/bus_routes", method: :post do %> 
+<h3> New Bus Stop is being added </h3>
+<%= form_tag "/bus_stops", method: :post do %> 
   <div class="form-group">
     <label for="text">Name: </label>
-    <input type="text" class="form-control" name="name" placeholder="Company name">
+    <input type="text" class="form-control" name="name" placeholder="Bus stop name">
   </div> 
   <div class="form-group">
-    <label for="text">Description: </label>
-    <input type="text" class="form-control" name="description" placeholder="Company Description">
+    <label for="text">Latitude: </label>
+    <input type="float" class="form-control" name="latitude" placeholder="Latitude">
+  </div> 
+    <div class="form-group">
+    <label for="text">Longitude: </label>
+    <input type="float" class="form-control" name="longitude" placeholder="Longitude">
+  </div> 
+    <div class="form-group">
+    <label for="text">Stop Order: </label>
+    <input type="text" class="form-control" name="stop_order" placeholder="Bus Stop Order">
   </div> 
   <div>
     <button type="submit" class="btn btn-primary">Submit</button>

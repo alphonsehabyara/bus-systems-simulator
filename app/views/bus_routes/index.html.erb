@@ -1,16 +1,19 @@
-<div class="row">
-  <% @bus_routes.each do |bus_route| %>
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Description</th> 
-      </tr>
-      <tr>
-        <td><%= bus_route.name %></td>
-        <td><%= bus_route.description %></td> 
-      </tr>
-    </table>
-   <% end %>
+<h1>Bus Routes in Kigali</h1>
+
+<div class="container">
+<%= button_to "Add a Bus Route", "/bus_routes/new", class: "btn btn-primary", method: :get %> </br>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Description</th> 
+    </tr>
+    <% @bus_routes.each do |bus_route| %>
+    <tr>
+      <td><%= bus_route.name %></td>
+      <td><%= bus_route.description %></td> 
+    </tr>
+    <% end %>
+  </table>
 </div>
 
 
