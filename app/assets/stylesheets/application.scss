@@ -33,3 +33,14 @@ tr:nth-child(even) {
 h1 {
   text-align: center;
 }
+.map-section {
+  display: flex;
+  #map {
+    width:  1150px;
+    height: 400px;
+    background-color : #385998;
+    flex: 1;
+    margin: 3rem;
+  }
+}
+
