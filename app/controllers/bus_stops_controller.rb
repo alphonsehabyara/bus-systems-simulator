@@ -17,10 +17,10 @@ class BusStopsController < ApplicationController
     coordinates = Geocoder.coordinates(address)
     bus_stop = BusStop.new({
       name: params[:name],
+      address: address,
       latitude: coordinates[0],
       longitude: coordinates[1],
-      stop_order: params[:stop_order],
-      address: address
+      stop_order: params[:stop_order]
       })    
     bus_stop.save
     redirect_to "/bus_stops/#{bus_stop.id}"   

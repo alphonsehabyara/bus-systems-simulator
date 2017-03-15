@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root to: 'companies#index'
   get "/companies", to: 'companies#index'
   get "companies/new", to: 'companies#new'
-  post "/companies/search", to: 'companies#search'
   get "/companies/:id", to: 'companies#show'
   post "companies", to: 'companies#create'
   get "/companies/:id/edit", to: 'companies#edit'
@@ -30,5 +29,8 @@ Rails.application.routes.draw do
   get "/bus_stops/:id/edit", to: 'bus_stops#edit'
   patch "/bus_stops/:id", to: 'bus_stops#update'
   delete "/bus_stops/:id", to: 'bus_stops#destroy'
+
+  #Route for search
+  post "/search", to: 'searches#search_results'
 
 end

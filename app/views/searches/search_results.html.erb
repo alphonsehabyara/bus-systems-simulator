@@ -1,0 +1,47 @@
+<div class="col-md-6">
+  <h1> Transportation operator</h1>
+  <table class="table">
+    <tr>
+      <th>Company Name</th>
+      <th>Company Description</th>
+    </tr>
+    <% @companies.each do |company| %>
+    <tr>
+      <td><%= company.name %></td>
+      <td><%= company.description %></td>
+    </tr>
+    <% end %>
+  </table>
+</div> 
+
+<div class="col-md-6">
+  <h1>Route</h1>
+  <table class="table">
+    <tr>
+      <th>Route Name</th>
+      <th>Route Description</th>
+    </tr>
+    <% @bus_routes.each do |bus_route| %>
+    <tr>
+      <td><%= bus_route.name %></td>
+      <td><%= bus_route.description %></td>
+    </tr>
+    <% end %>
+  </table>
+</div> 
+
+<div class="col-md-6">
+  <h1>Bus Stop/Terminal</h1>
+  <table class="table">
+    <tr>
+      <th>Bus Stop Name</th>
+      <th>Bus Stop Address</th>
+    </tr>
+    <% @bus_stops.each do |bus_stop| %>
+    <tr>
+      <td><%= bus_stop.name %></td>
+      <td><%= bus_stop.address %></td>
+    </tr>
+    <% end %>
+  </table>
+</div> 

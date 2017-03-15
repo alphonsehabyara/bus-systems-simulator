@@ -9,6 +9,14 @@
 
 </head>
 <body>
+<div class="container">
+  <% flash.each do |name, message| %>
+  <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong><%= message %></strong>
+  </div>
+  <% end %>
+</div>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -51,7 +59,7 @@
             </ul>
           </li>
         </ul>
-        <%= form_tag "/companies/search", class: "navbar-form navbar-left", method: :post do %>
+        <%= form_tag "/search", class: "navbar-form navbar-left", method: :post do %>
           <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="search_input">
           </div>
@@ -66,14 +74,5 @@
 
   <%= yield %>
 
-
 </body>
-<div class="container">
-  <% flash.each do |name, message| %>
-  <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <strong><%= message %></strong>
-  </div>
-  <% end %>
-</div>
 </html>

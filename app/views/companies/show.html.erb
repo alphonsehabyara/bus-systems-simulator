@@ -1,6 +1,7 @@
-<h2> Each in many, ride with <%= @company.name %></h2>
-<h3> <%= @company.description %></h3>
+<div class="col-md-6">
+  <h2> Each in many, ride with <%= @company.name %></h2>
+  <h3> <%= @company.description %></h3>
+  <button class="btn btn-info"><a href="<%= @company.id %>/edit">Edit</a></button>
+  <%= button_to "Delete", "/companies/#{@company.id}", method: :delete %>
+</div>
 
-<button class="btn btn-info"><a href="<%= @company.id %>/edit">Edit</a></button>
-
-<%= button_to "Delete", "/companies/#{@company.id}", method: :delete %>

@@ -7,17 +7,22 @@
   <table class="table">
     <tr>
       <th>Name</th>
+      <th>Bus Stop Address</th>
       <th>Latitude</th> 
       <th>Longitude</th>
       <th>Stop Order</th> 
     </tr>
     <% @bus_stops.each do |bus_stop| %>
     <tr>
-      <td><%= bus_stop.name %></td>
+      <td><a href="/bus_stops/<%= bus_stop.id %>"><%= bus_stop.name %></td>
+      <td><%= bus_stop.address %></td>
       <td><%= bus_stop.latitude %></td> 
       <td><%= bus_stop.longitude %></td>
       <td><%= bus_stop.stop_order %></td> 
+      
+      
     </tr>
+
     <% end %>
   </table>
 </div>

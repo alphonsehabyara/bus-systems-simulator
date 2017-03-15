@@ -9,7 +9,7 @@
     </tr>
     <% @bus_routes.each do |bus_route| %>
     <tr>
-      <td><%= bus_route.name %></td>
+      <td><a href="/bus_routes/<%= bus_route.id %>"><%= bus_route.name %></td>
       <td><%= bus_route.description %></td> 
     </tr>
     <% end %>
