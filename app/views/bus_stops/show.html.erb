@@ -1,10 +1,16 @@
-<h1> Bus Stops </h1>
+<div class="container">
+  <div class="row"> 
+    <div class="col-md-2">
+      <h1> Bus Stops </h1>
 
-<h2> <%= @bus_stop.name %></h2>
-<h2> <%= @bus_stop.latitude %></h3>
-<h2> <%= @bus_stop.longitude %></h2>
-<h2> <%= @bus_stop.stop_order %></h3>e
+      <h2> <%= @bus_stop.name %></h2>
+      <h2> <%= @bus_stop.latitude %></h3>
+      <h2> <%= @bus_stop.longitude %></h2>
+      <h2> <%= @bus_stop.stop_order %></h3>
 
-<button class="btn btn-info"><a href="<%= @bus_stop.id %>/edit">Edit</a></button>
+      <button class="btn btn-info"><a href="<%= @bus_stop.id %>/edit">Edit</a></button>
 
-<%= button_to "Delete", "/bus_stops/#{@bus_stop.id}", method: :delete %>
+      <%= button_to "Delete", "/bus_stops/#{@bus_stop.id}", method: :delete %>
+    </div>
+  </div>
+</div>
