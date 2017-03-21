@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="row">  
+<div class="new-section">
+  <div class="row"> 
     <h3> New Bus Stop is being added </h3>
     <%= form_tag "/bus_stops", method: :post do %> 
     <div class="col-md-8 offset-4">
@@ -17,6 +17,7 @@
       </div> 
       <div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="btn btn-info"><a href="/bus_stops">Cancel</a></button>
       </div>
     </div>
     <% end %>

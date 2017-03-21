@@ -1,24 +1,27 @@
-<div class="container">
-  <div class="row"> 
-    <h3> <%= @bus_stop.name %> is being modified </h3>
-    <%= form_tag "/bus_stops/#{@bus_stop.id}", method: :patch do %> 
-    <div class="col-md-4">
-      <div class="form-group">
-        <label for="text">Name: </label>
-        <input type="text" class="form-control" name="name" value="<%=@bus_stop.name %>" placeholder="Bus Stop">
-      </div> 
-      <div class="form-group">
-        <label for="text">Address: </label>
-        <input type="text" class="form-control" name="address" value="<%=@bus_stop.address %>" placeholder="Bus Stop Address">
-      </div>  
-      <div class="form-group">
-        <label for="text">Stop Order: </label>
-        <input type="text" class="form-control" name="stop_order" value="<%=@bus_stop.stop_order %>" placeholder="Bus Stop Order">
-      </div> 
-      <div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+<div class="edit-section">
+  <div class="row">
+    <div class="col-md-14"> 
+      <h3> <%= @bus_stop.name %> bus stop is being modified </h3>
+      <%= form_tag "/bus_stops/#{@bus_stop.id}", method: :patch do %> 
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="text">Stop name: </label>
+          <input type="text" class="form-control" name="name" value="<%=@bus_stop.name %>" placeholder="Bus Stop">
+        </div> 
+        <div class="form-group">
+          <label for="text">Stop address: </label>
+          <input type="text" class="form-control" name="address" value="<%=@bus_stop.address %>" placeholder="Bus Stop Address">
+        </div>  
+        <div class="form-group">
+          <label for="text">Stop Order: </label>
+          <input type="text" class="form-control" name="stop_order" value="<%=@bus_stop.stop_order %>" placeholder="Bus Stop Order">
+        </div> 
+        <div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button class="btn btn-info"><a href="/bus_stops">Cancel</a></button>
+        </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>

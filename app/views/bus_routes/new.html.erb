@@ -1,16 +1,21 @@
-<h3> New Bus route is being added </h3>
-<%= form_tag "/bus_routes", method: :post do %> 
-  <div class="col-md-4">
-    <div class="form-group">
-      <label for="text">Name: </label>
-      <input type="text" class="form-control" name="name" placeholder="Route name">
-    </div> 
-    <div class="form-group">
-      <label for="text">Description: </label>
-      <textarea type="text" class="form-control" name="description" placeholder="Route Description"></textarea>
-    </div> 
-    <div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+<div class="new-section">
+  <div class="row">
+    <h3>New Bus route is being added </h3>
+    <%= form_tag "/bus_routes", method: :post do %> 
+      <div class="col-md-10">
+        <div class="form-group">
+          <label for="text">Name: </label>
+          <input type="text" class="form-control" name="name" placeholder="Route name">
+        </div> 
+        <div class="form-group">
+          <label for="text">Description: </label>
+          <textarea type="text" class="form-control" name="description" placeholder="Route Description"></textarea>
+        </div> 
+        <div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button class="btn btn-info"><a href="/bus_routes">Cancel</a></button>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

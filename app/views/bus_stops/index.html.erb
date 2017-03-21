@@ -3,6 +3,11 @@
 <%= render 'layouts/map' %>
 
 <div class="container">
+  <div class="col-md-4">
+    <input type="text" class="form-control" placeholder="Departure" name="stop_address">
+    <input type="text" class="form-control" placeholder="Arrival" name="stop_address">
+    <button type="submit" class="btn btn-default">Submit</button>
+  </div>
 <%= button_to "Add a Bus Stop", "/bus_stops/new", class: "btn btn-primary", method: :get %> </br>
   <table class="table">
     <tr>

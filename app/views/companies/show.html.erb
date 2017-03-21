@@ -1,7 +1,13 @@
-<div class="col-md-6">
-  <h2> Each in many, ride with <%= @company.name %></h2>
-  <h3> <%= @company.description %></h3>
-  <button class="btn btn-info"><a href="<%= @company.id %>/edit">Edit</a></button>
-  <%= button_to "Delete", "/companies/#{@company.id}", method: :delete %>
+<div class="show-section">
+  <div class="row">
+    <div class="col-md-10">
+      <h2> <u>Each in many, ride with <%= @company.name %></u></h2>
+      <h3><b>Company Description</b></h3>
+      <h3> <%= @company.description %></h3>
+      <button class="btn btn-success"><a href="<%= @company.id %>/edit">Edit</a></button>
+      <button class="btn btn-info"><a href="/companies">Cancel</a></button>
+      <%= button_to "Delete", "/companies/#{@company.id}", method: :delete %>
+    </div>
+  </div>
 </div>
 

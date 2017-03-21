@@ -23,7 +23,8 @@ class BusStopsController < ApplicationController
       stop_order: params[:stop_order]
       })    
     bus_stop.save
-    redirect_to "/bus_stops/#{bus_stop.id}"   
+    # redirect_to "/bus_stops/#{bus_stop.id}"   
+    redirect_to "/bus_stops"
   end
 
   def edit
@@ -31,11 +32,14 @@ class BusStopsController < ApplicationController
   end
 
   def update
+    address = params[:address]
+    coordinates = Geocoder.coordinates(address)
     bus_stop = BusStop.find_by(id: params[:id])
     bus_stop.assign_attributes({
       name: params[:name],
-      latitude: params[:latitude],
-      longitude: params[:longitude],
+      address: address,
+      latitude: coordinates[0],
+      longitude: coordinates[1],
       stop_order: params[:stop_order]
       })
     bus_stop.save
