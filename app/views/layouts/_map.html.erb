@@ -1,19 +1,21 @@
  <div class="map-section" >
   <div id="map"></div>
-    <script>
-        function initMap() {
-          var kigali = {lat: -1.9501, lng: 30.0588};
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: kigali
-          });
-          var marker = new google.maps.Marker({
-            position: kigali,
-            map: map
-          });
-        }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFb_SoEoNeU_C1Sq_KKX2RcF0UWcrU1ek&callback=initMap">
-    </script>
-  </div>
+  <script>
+    function initMap() {
+      var kigali = {lat: -1.9501, lng: 30.0588};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: kigali
+      });
+      var marker = new google.maps.Marker({
+        position: kigali,
+        map: map
+      });
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFb_SoEoNeU_C1Sq_KKX2RcF0UWcrU1ek&callback=initMap">
+  </script>
+</div>
+
+

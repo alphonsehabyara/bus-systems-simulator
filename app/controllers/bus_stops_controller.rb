@@ -5,7 +5,7 @@ class BusStopsController < ApplicationController
   end
 
   def show
-    @bus_stop = BusStop.find_by(id: params[:id])    
+    @bus_stop = BusStop.find_by(id: params[:id])
   end
 
   def new
