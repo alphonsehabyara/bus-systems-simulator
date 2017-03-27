@@ -77,6 +77,7 @@ h1 {
 }
 
 
+//for google map to show routes and stops
 #right-panel {
   font-family: 'Roboto','sans-serif';
   line-height: 30px;
@@ -114,8 +115,8 @@ html, body {
   text-align: left;
   padding-top: 0;
 }
-// #directions-panel {
-//   margin-top: 10px;
-//   background-color: #FFEE77;
-//   padding: 10px;
-// }
+#directions-panel {
+  margin-top: 10px;
+  background-color: #FFEE77;
+  padding: 10px;
+}
