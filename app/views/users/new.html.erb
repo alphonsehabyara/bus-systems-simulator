@@ -1,0 +1,27 @@
+<div class="new-section">
+  <div class="row"> 
+    <div class="col-md-8 offset-4">
+    <h1>Account info</h1>
+    <%= form_tag '/users', method: :post do  %>
+      <div class="form-group">
+        <label for="Text">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Name" >
+      </div>
+      <div class="form-group">
+        <label for="inputText">Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="inputText">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <label for="inputText">Confirm Password</label>
+        <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
+      </div>
+      <div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    <% end %>
+  </div>
+</div>

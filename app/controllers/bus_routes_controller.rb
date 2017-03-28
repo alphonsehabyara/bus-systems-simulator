@@ -1,12 +1,13 @@
 class BusRoutesController < ApplicationController
 
   def index
-    @bus_routes = BusRoute.all   
+    @bus_routes = BusRoute.all
+    @bus_stops = BusStop.all   
   end
 
   def show
     @bus_route = BusRoute.find_by(id: params[:id])    
-    @bus_stops = BusStop.all
+    @bus_stops = @bus_route.bus_stops
   end
 
   def new

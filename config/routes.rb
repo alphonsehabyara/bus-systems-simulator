@@ -33,4 +33,11 @@ Rails.application.routes.draw do
   #Route for search
   post "/search", to: 'searches#search_results'
 
+  #Route for users
+  get "/signup", to: "users#new"
+  post "/users", to: "users#create"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+
 end

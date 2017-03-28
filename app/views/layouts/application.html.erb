@@ -53,7 +53,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timetable <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">KBS</a></li>
+              <li><a href="http://www.kigalibusservices.com/Files/Routes/Bus%20Routes%20Zone%201.pdf">KBS</a></li>
               <li><a href="#">Royal Express</a></li>
               <li><a href="#">RFTC</a></li>
               <li><a href="#">RITCO Ltd</a></li>
@@ -69,7 +69,16 @@
         <ul class="nav navbar-nav">
           <li><a href="#">Contact US</a></li>
         </ul>
-      </div><!-- /.navbar-collapse -->
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+          <li><%= link_to "Logout", "/logout", method: :delete %></li>
+          <% else %>
+          <li><%= link_to "Sign Up", "/signup" %></li>
+          <li><%= link_to "Login", "/login" %></li>
+          <% end %>
+
+        </ul>
+        </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
 

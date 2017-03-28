@@ -1,11 +1,17 @@
 class BusStopsController < ApplicationController
 
   def index
-    @bus_stops = BusStop.all    
+    @bus_stops = BusStop.all
+    @waypoints = []
+    @bus_stops.each do |bus_stop|
+      @waypoints << {location: "#{bus_stop.latitude}, #{bus_stop.longitude}", stopover: true}
+    end
+    @waypoints = 
   end
 
   def show
     @bus_stop = BusStop.find_by(id: params[:id])
+    @bus_stops = BusStop.all
   end
 
   def new
