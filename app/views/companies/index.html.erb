@@ -1,7 +1,9 @@
 <h1> Public Transport Companies in Kigali </h1>
 <%= render 'layouts/map' %>
 <div class="container">
+<% if current_user.admin %>
 <%= button_to "Add a New Company", "/companies/new", class: "btn btn-primary", method: :get %> </br>
+<% end %>
   <% @companies.each_slice(3) do |three_companies| %>
     <div class="row">
         <% three_companies.each do |company| %>

@@ -5,9 +5,11 @@
       <h1> Bus Routes </h1>
       <h2> From <%= @bus_route.name %></h2>
       <h3> <%= @bus_route.description %></h3>
+      <% if current_user.admin %>
       <button class="btn btn-success"><a href="<%= @bus_route.id %>/edit">Edit</a></button>
       <button class="btn btn-info"><a href="/bus_routes">Cancel</a></button>
       <%= button_to "Delete", "/bus_routes/#{@bus_route.id}", method: :delete %>
       </div>
+      <% end %>
   </div>
 </div>

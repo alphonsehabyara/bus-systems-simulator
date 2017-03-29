@@ -26,9 +26,9 @@ td, th {
     padding: 8px;
 }
 
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
+// tr:nth-child(even) {
+//     background-color: #dddddd;
+// }
 
 h1 {
   text-align: center;
@@ -57,7 +57,7 @@ h1 {
 
 .navbar {
   background-color: lightblue;
-  size: 16;
+  size: 20;
 }
 
 //for views
@@ -78,23 +78,23 @@ h1 {
 
 
 //for google map to show routes and stops
-#right-panel {
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
-}
+// #right-panel {
+//   font-family: 'Roboto','sans-serif';
+//   line-height: 30px;
+//   padding-left: 10px;
+// }
 
-#right-panel select, #right-panel input {
-  font-size: 15px;
-}
+// #right-panel select, #right-panel input {
+//   font-size: 15px;
+// }
 
-#right-panel select {
-  width: 100%;
-}
+// #right-panel select {
+//   width: 100%;
+// }
 
-#right-panel i {
-  font-size: 12px;
-}
+// #right-panel i {
+//   font-size: 12px;
+// }
 html, body {
   height: 100%;
   margin: 0;
@@ -106,17 +106,24 @@ html, body {
   width: 70%;
   height: 100%;
 }
-#right-panel {
-  margin: 20px;
-  border-width: 2px;
-  width: 20%;
-  height: 400px;
-  float: left;
-  text-align: left;
-  padding-top: 0;
+// #right-panel {
+//   margin: 20px;
+//   border-width: 2px;
+//   width: 20%;
+//   height: 400px;
+//   float: left;
+//   text-align: left;
+//   padding-top: 0;
+// }
+// #directions-panel {
+//   margin-top: 10px;
+//   background-color: #FFEE77;
+//   padding: 10px;
+// }
+footer {
+  background-color: lightblue;
+  size: 16;
 }
-#directions-panel {
-  margin-top: 10px;
-  background-color: #FFEE77;
-  padding: 10px;
+.jumbotron {
+  background-color: #ffffb3;
 }

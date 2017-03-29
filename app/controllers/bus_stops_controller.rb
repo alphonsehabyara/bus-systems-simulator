@@ -1,12 +1,13 @@
 class BusStopsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @bus_stops = BusStop.all
-    @waypoints = []
-    @bus_stops.each do |bus_stop|
-      @waypoints << {location: "#{bus_stop.latitude}, #{bus_stop.longitude}", stopover: true}
-    end
-    @waypoints = 
+  #   @waypoints = []
+  #   @bus_stops.each do |bus_stop|
+  #     @waypoints << {location: "#{bus_stop.latitude}, #{bus_stop.longitude}", stopover: true}
+  #   end
   end
 
   def show

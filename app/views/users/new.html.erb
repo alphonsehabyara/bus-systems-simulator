@@ -1,8 +1,8 @@
 <div class="new-section">
   <div class="row"> 
     <div class="col-md-8 offset-4">
-    <h1>Account info</h1>
-    <%= form_tag '/users', method: :post do  %>
+      <h1>Account info</h1>
+      <%= form_tag '/users', method: :post do  %>
       <div class="form-group">
         <label for="Text">Name</label>
         <input type="text" class="form-control" name="name" placeholder="Name" >
@@ -20,8 +20,10 @@
         <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
       </div>
       <div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </div>
-    <% end %>
+      <h5> A new User? <%= link_to "Sign In Now!", "/login" %></a></h5>
+      <% end %>
+    </div>
   </div>
 </div>

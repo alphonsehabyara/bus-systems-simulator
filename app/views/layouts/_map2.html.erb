@@ -1,88 +1,118 @@
 <div class="map-section">
   <div id="map"></div>
   <div id="right-panel">
-    <div>
-      <b>Origin:</b>
-      <select id="start">
-        <% @bus_stops.each do |bus_stop| %>
-        <option value="<%= bus_stop.latitude%>, <%= bus_stop.longitude%>"><%= bus_stop.name%></option>
-        <% end %>
-      </select>
-      <br>
-
-      <b>Destination:</b>
-      <select id="end">
-        <% @bus_stops.each do |bus_stop| %>
-        <option value="<%= bus_stop.latitude%>, <%= bus_stop.longitude%>"><%= bus_stop.name%></option>
-        <% end %>
-      </select>
-      <br>
-      <input type="submit" id="submit">
-    </div>
     <div id="directions-panel"></div>
   </div>
   <script>
     function initMap() {
-      var directionsService = new google.maps.DirectionsService;
-      var directionsDisplay = new google.maps.DirectionsRenderer;
-      var kigali = {lat: -1.9505507, lng: 30.0601793};
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: kigali
-      });
-      var marker = new google.maps.Marker({
-        position: kigali,
-        map: map
-      });
-      directionsDisplay.setMap(map);
+      var pointA = new google.maps.LatLng(<%= @bus_stops.first.latitude%>, <%= @bus_stops.first.longitude%>),
+        pointB = new google.maps.LatLng(<%= @bus_stops.last.latitude%>, <%= @bus_stops.last.longitude%>),
+        myOptions = {
+          zoom: 12,
+          center: pointA
+        },
+        map = new google.maps.Map(document.getElementById('map'), myOptions),
+        // Instantiate a directions service.
+        directionsService = new google.maps.DirectionsService,
+        directionsDisplay = new google.maps.DirectionsRenderer({
+          map: map
+        }),
+        markerA = new google.maps.Marker({
+          position: pointA,
+          title: "point A",
+          label: "A",
+          map: map
+        }),
+        markerB = new google.maps.Marker({
+          position: pointB,
+          title: "point B",
+          label: "B",
+          map: map
+        });
 
-      document.getElementById('submit').addEventListener('click', function() {
-        calculateAndDisplayRoute(directionsService, directionsDisplay);
-      });
+      // get route from A to B
+      calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+
     }
 
-    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-      // var waypts = [];
-      // var checkboxArray = document.getElementById('waypoints');
-      // for (var i = 0; i < checkboxArray.length; i++) {
-      //   if (checkboxArray.options[i].selected) {
-      //     waypts.push({
-      //       location: checkboxArray[i].value,
-      //       stopover: true
-      //     });
-      //   }
-      // }
-
-      var waypts = <%= raw @waypoints.to_json %>
-
+    function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
       directionsService.route({
-        origin: document.getElementById('start').value,
-        destination: document.getElementById('end').value,
-        waypoints: waypts,
-        optimizeWaypoints: true,
-        travelMode: 'DRIVING'
+        origin: pointA,
+        destination: pointB,
+        travelMode: google.maps.TravelMode.DRIVING
       }, function(response, status) {
-        if (status === 'OK') {
+        if (status == google.maps.DirectionsStatus.OK) {
           directionsDisplay.setDirections(response);
-          var route = response.routes[0];
-          var summaryPanel = document.getElementById('directions-panel');
-          summaryPanel.innerHTML = '';
-          // For each route, display summary information.
-          for (var i = 0; i < route.legs.length; i++) {
-            var routeSegment = i + 1;
-            summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
-            '</b><br>';
-            summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-            summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-            summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
-          }
         } else {
           window.alert('Directions request failed due to ' + status);
         }
       });
     }
+
+    initMap();
+
+
+    // function initMap() {
+    //   var directionsService = new google.maps.DirectionsService;
+    //   var directionsDisplay = new google.maps.DirectionsRenderer;
+    //   var kigali = {lat: -1.9505507, lng: 30.0601793};
+    //   var map = new google.maps.Map(document.getElementById('map'), {
+    //     zoom: 15,
+    //     center: kigali
+    //   });
+    //   var marker = new google.maps.Marker({
+    //     position: kigali,
+    //     map: map
+    //   });
+    //   directionsDisplay.setMap(map);
+
+    //   // document.getElementById('submit').addEventListener('click', function() {
+    //   //   calculateAndDisplayRoute(directionsService, directionsDisplay);
+    //   // });
+    // }
+
+    // function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+    //   // var waypts = [];
+    //   // var checkboxArray = document.getElementById('waypoints');
+    //   // for (var i = 0; i < checkboxArray.length; i++) {
+    //   //   if (checkboxArray.options[i].selected) {
+    //   //     waypts.push({
+    //   //       location: checkboxArray[i].value,
+    //   //       stopover: true
+    //   //     });
+    //   //   }
+    //   // }
+
+
+    //   directionsService.route({
+    //     origin: "<%= @bus_stops.first.latitude%>, <%= @bus_stops.first.longitude%>",
+    //     destination: "<%= @bus_stops.last.latitude%>, <%= @bus_stops.last.longitude%>",
+    //     // waypoints: waypts,
+    //     // optimizeWaypoints: true,
+    //     travelMode: 'DRIVING'
+    //   }, function(response, status) {
+    //     if (status === 'OK') {
+    //       directionsDisplay.setDirections(response);
+    //       var route = response.routes[0];
+    //       var summaryPanel = document.getElementById('directions-panel');
+    //       summaryPanel.innerHTML = '';
+    //       // For each route, display summary information.
+    //       for (var i = 0; i < route.legs.length; i++) {
+    //         var routeSegment = i + 1;
+    //         summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+    //         '</b><br>';
+    //         summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+    //         summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+    //         summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+    //       }
+    //     } else {
+    //       window.alert('Directions request failed due to ' + status);
+    //     }
+    //   });
+    // }
   </script>
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFb_SoEoNeU_C1Sq_KKX2RcF0UWcrU1ek&callback=initMap">
   </script>
 </div>
+

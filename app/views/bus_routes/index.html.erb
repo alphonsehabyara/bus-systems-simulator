@@ -1,6 +1,8 @@
 <h1>Bus Routes in Kigali</h1>
 <div class="container">
+<% if current_user.admin %>
 <%= button_to "Add a Bus Route", "/bus_routes/new", class: "btn btn-primary", method: :get %> </br>
+<% end %>
   <table class="table">
     <tr>
       <th>Name</th>

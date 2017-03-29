@@ -1,7 +1,7 @@
 <div class="search-section">
   <div id="search"></div>
     <% if Company.all.any?%>
-      <div class="col-md-6">
+      <div class="col-md-10">
         <h1> Transportation operator</h1>
         <table class="table">
           <tr>
@@ -17,7 +17,7 @@
         </table>
       </div>
      
-    <% elsif BusRoute.all.any?%>
+    <% elsif @bus_routes.any?%>
       <div class="col-md-6">
         <h1>Route</h1>
         <table class="table">

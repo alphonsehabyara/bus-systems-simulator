@@ -1,11 +1,13 @@
 class CompaniesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @companies = Company.all   
   end
 
   def show
-    @company = Company.find_by(id: params[:id])    
+    @company = Company.find_by(id: params[:id])        
   end
 
   def new
