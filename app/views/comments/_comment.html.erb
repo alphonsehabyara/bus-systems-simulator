@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% @company.comments.each do |comment| %>
 <a href="/users"><strong><%=comment.user.name%></strong></a>
   <%= comment.comment_body %>
@@ -14,3 +15,28 @@
     </div>
   </div>
 <% end %>
+=======
+
+
+<% @company.comments.each do |comment| %> 
+<a href="/users"><strong><%= comment.user.name %></strong></a>
+<p><%= comment.comment_body %><p>
+<p class="created_at">It's been <%= time_ago_in_words(comment.created_at) %></p><br>
+<% end %> 
+<%= form_tag "/comments", method: :post do %>
+  <form>
+    <div class="form-group">
+      <div class="form-group">
+        <h4><a href="/users/<%= current_user.id %>"><%= current_user.name %></a></h4>
+        <textarea rows="4" cols="50" type="text" class="form-control" name="comment_body" placeholder="Add a comment here"></textarea>
+        <input type="hidden" name="company_id" value="<%= @company.id %>"><br>
+      </div> 
+      <div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="btn btn-info"><a href="/company.id">Cancel</a></button>
+      </div>
+    </div>
+  </form>
+<% end %>
+ 
+>>>>>>> ef272d45347ea5dad5430b6094ab5e156b76408a

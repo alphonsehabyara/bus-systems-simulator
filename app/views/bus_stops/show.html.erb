@@ -1,16 +1,25 @@
 <div class="show-section">
   <div class="row"> 
     <div class="col-md-8">
-   <!--    <h1> Bus Stops </h1> -->
-      <h2> Latitude and Longitude for <%= @bus_stop.name %> bus stop</h2>
+      <h2> Latitude and Longitude for <i><%= @bus_stop.name %></i> bus stop</h2>
       <h2> <b>Latitude:</b> <%= @bus_stop.latitude %></h3>
       <h2> <b>Longitude:</b> <%= @bus_stop.longitude %></h2>
       <h2> <b>Stop Order:</b> <%= @bus_stop.stop_order %></h3>
+<<<<<<< HEAD
       <% if current_user.admin %>
       <button class="btn btn-success"><a href="<%= @bus_stop.id %>/edit">Edit</a></button>
       <button class="btn btn-info"><a href="/bus_stops">Cancel</a></button>
       <%= button_to "Delete", "/bus_stops/#{@bus_stop.id}", method: :delete %>
       <% end %>
+=======
+      <ul class="menu list-inline">
+        <% if current_user.admin %>
+          <li><button class="btn btn-success"><a href="<%= @bus_stop.id %>/edit">Edit</a></button></li>
+          <li><button class="btn btn-info"><a href="/bus_stops">Cancel</a></button></li>
+          <li><%= button_to "Delete", "/bus_stops/#{@bus_stop.id}", method: :delete %></li>
+        <% end %>
+      </ul>
+>>>>>>> ef272d45347ea5dad5430b6094ab5e156b76408a
     </div>
   </div>
 </div>

@@ -1,9 +1,10 @@
 <div class="show-section">
   <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-12">
       <h2> <u>Each in many, ride with <%= @company.name %></u></h2>
       <h3><b>Company Description</b></h3>
       <h3> <%= @company.description %></h3>
+<<<<<<< HEAD
       <% if current_user.admin %>
       <button class="btn btn-success"><a href="<%= @company.id %>/edit">Edit</a></button>
       <button class="btn btn-info"><a href="/companies">Cancel</a></button>
@@ -15,6 +16,20 @@
     Service  : <%= rating_for @company, 'service' %>
     Seats : <%= rating_for @company, 'seats' %>
     Price  : <%= rating_for @company, 'price' %>
+=======
+      <ul class="menu list-inline">
+        <% if current_user.admin %>
+          <li><button class="btn btn-success"><a href="<%= @company.id %>/edit">Edit</a></button></li>
+          <li><button class="btn btn-info"><a href="/companies">Go back</a></button></li>
+          <li><%= button_to "Delete", "/companies/#{@company.id}", method: :delete %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div style="float: right;" class="col-xs-6-col-md-6">
+      Service  : <%= rating_for @company, 'service' %>
+      Seats : <%= rating_for @company, 'seats' %>
+      Price  : <%= rating_for @company, 'price' %>
+>>>>>>> ef272d45347ea5dad5430b6094ab5e156b76408a
     </div>
   </div>
   <%= render 'comments/comment' %>
