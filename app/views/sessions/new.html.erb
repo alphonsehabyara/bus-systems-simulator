@@ -1,0 +1,26 @@
+<div class="new-section">
+  <div class="row"> 
+    <div class="col-md-8 col-md-offset-3">
+      <h1>Log In</h1>
+      <%= form_tag '/login', method: :post do  %>
+      <div class="form-group">
+        <h4><label for="inputText">Email</label></h4>
+        <input type="text" class="form-control" name="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <h4><label for="inputText">Passowrd</label></h4>
+        <input type="password" class="form-control" name="password" placeholder="Password">
+      </div>
+      <label class="remember">
+        <input id="PersistentCookie" name="PersistentCookie" value="yes" checked="unchecked" type="checkbox"> 
+        <span>Stay signed in</span>
+      </label>
+      <h5> Forget password? <%= link_to "Reset password", new_password_reset_path %></h5>
+      <div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      <h5> A new User? <%= link_to "Create account", "/signup" %></a></h5>
+      <% end %>
+    </div>
+  </div>
+</div>

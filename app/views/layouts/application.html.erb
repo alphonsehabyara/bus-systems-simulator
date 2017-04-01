@@ -7,17 +7,19 @@
   <meta charset="utf-8">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 </head>
 <body>
-<div class="container">
-  <% flash.each do |name, message| %>
-  <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <strong><%= message %></strong>
+  <div class="container">
+    <% flash.each do |name, message| %>
+    <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong><%= message %></strong>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,7 +30,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/companies">Home</a>
+        <a class="navbar-brand" href="/">Home</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,7 +55,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Timetable <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">KBS</a></li>
+              <li><a href="http://www.kigalibusservices.com/Files/Routes/Bus%20Routes%20Zone%201.pdf">KBS</a></li>
               <li><a href="#">Royal Express</a></li>
               <li><a href="#">RFTC</a></li>
               <li><a href="#">RITCO Ltd</a></li>
@@ -61,19 +63,73 @@
           </li>
         </ul>
         <%= form_tag "/search", class: "navbar-form navbar-left", method: :post do %>
-          <div class="form-group">
+        <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="search_input">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
         <% end %>
         <ul class="nav navbar-nav">
           <li><a href="#">Contact US</a></li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+          <li><%= link_to "Logout", "/logout", method: :delete %></li>
+          <% else %>
+          <li><%= link_to "Sign Up", "/signup" %></li>
+          <li><%= link_to "Login", "/login" %></li>
+          <% end %>
+
+        </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-
+  <%= render "layouts/header" %>
   <%= yield %>
-
-</body>
-</html>
+  <footer>
+    <div class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <p style="float: center; font-size: 22px; color:  #000000;">No more staying to long queu. Bus Systems Simulator, the solution you've been looking for</p>
+            <h4 style="color:  #000000;">Trip to our office</h4>
+            <address>
+              Kigali, Rwanda, KG 11 Av 183
+            </address>
+          </div>
+        </div>
+        <div class="container-fluid"></div>
+        <div class="bottom-footer">
+          <div class="row text-center">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <ul class="menu list-inline">       
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a href="#">About</a>
+                </li>
+                <li>
+                  <a href="#">Blog</a>
+                </li>
+                <li>
+                 <a href="#">Gallery</a>
+               </li>
+              <li> Contact us on
+                <a target="blank" href="https://www.facebook.com/HabyaraA"><i class="fa fa-facebook fa-2x"></i></a>
+              </li>
+              <li>
+                <a target="blank" ref="https://twitter.com/HabyaraA"><i class="fa fa-twitter fa-2x"></i></a>
+              </li>
+              <li>
+                <a target="blank" href="https://www.instagram.com/habyaraa/"><i class="fa fa-instagram fa-2x"></i></a>
+              </li>
+              <li>
+                <a target="blank" href="https://www.linkedin.com/in/alphonse-habyarimana-a7a10888/"><i class="fa fa-linkedin fa-2x"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-5">© Copyright Bus Systems Simulator <%= Time.now.year %></div>
+        </div>
+      </footer>
+    </body>
+    </html>

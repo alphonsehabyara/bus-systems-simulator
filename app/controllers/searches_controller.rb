@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
 
   def search_results
     search_query = params[:search_input]

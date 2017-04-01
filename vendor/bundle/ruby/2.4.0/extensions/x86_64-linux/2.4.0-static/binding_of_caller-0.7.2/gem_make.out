@@ -1,0 +1,16 @@
+current directory: /home/alpha/Actualize/bus-systems-simulator/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+/home/alpha/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20170329-2867-1xutwi6.rb extconf.rb
+
+current directory: /home/alpha/Actualize/bus-systems-simulator/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target 'clean'.  Stop.
+
+current directory: /home/alpha/Actualize/bus-systems-simulator/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /home/alpha/Actualize/bus-systems-simulator/vendor/bundle/ruby/2.4.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.
