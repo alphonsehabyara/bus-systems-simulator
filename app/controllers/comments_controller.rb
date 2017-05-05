@@ -44,4 +44,3 @@ class CommentsController < ApplicationController
     redirect_to "/comments"
   end
 end
-end
