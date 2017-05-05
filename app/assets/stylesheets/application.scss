@@ -26,13 +26,11 @@ td, th {
     padding: 8px;
 }
 
-<<<<<<< HEAD
-// tr:nth-child(even) {
-//     background-color: #dddddd;
-// }
+tr:nth-child(even) {
+    background-color: #dddddd;
+  }
 
-=======
->>>>>>> ef272d45347ea5dad5430b6094ab5e156b76408a
+
 h1 {
   text-align: center;
 }
@@ -78,29 +76,26 @@ h1 {
   width: 600px;
   margin: 0 auto;
 }
-<<<<<<< HEAD
 
+/*for google map to show routes and stops*/
+/*#right-panel {
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+  font-size: 15px;
+}
 
-//for google map to show routes and stops
-// #right-panel {
-//   font-family: 'Roboto','sans-serif';
-//   line-height: 30px;
-//   padding-left: 10px;
-// }
+#right-panel select, #right-panel input {
+  font-size: 15px;
+}
 
-// #right-panel select, #right-panel input {
-//   font-size: 15px;
-// }
+#right-panel select {
+  width: 100%;
+}
 
-// #right-panel select {
-//   width: 100%;
-// }
-
-// #right-panel i {
-//   font-size: 12px;
-// }
-=======
->>>>>>> ef272d45347ea5dad5430b6094ab5e156b76408a
+#right-panel i {
+  font-size: 12px;
+}*/
 html, body {
   height: 100%;
   margin: 0;
@@ -112,31 +107,25 @@ html, body {
   width: 70%;
   height: 100%;
 }
-<<<<<<< HEAD
-// #right-panel {
-//   margin: 20px;
-//   border-width: 2px;
-//   width: 20%;
-//   height: 400px;
-//   float: left;
-//   text-align: left;
-//   padding-top: 0;
-// }
-// #directions-panel {
-//   margin-top: 10px;
-//   background-color: #FFEE77;
-//   padding: 10px;
-// }
-=======
->>>>>>> ef272d45347ea5dad5430b6094ab5e156b76408a
+/*#right-panel {
+  margin: 20px;
+  border-width: 2px;
+  width: 20%;
+  height: 400px;
+  float: left;
+  text-align: left;
+  padding-top: 0;
+}*/
+/*#directions-panel {
+  margin-top: 10px;
+  background-color: #FFEE77;
+  padding: 10px;
+}*/
 footer {
   background-color: lightblue;
   size: 16;
 }
 .jumbotron {
-<<<<<<< HEAD
   background-color: #ffffb3;
-=======
   background-color: #e6f2ff;
->>>>>>> ef272d45347ea5dad5430b6094ab5e156b76408a
 }

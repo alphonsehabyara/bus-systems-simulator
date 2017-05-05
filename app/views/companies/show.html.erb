@@ -4,19 +4,16 @@
       <h2> <u>Each in many, ride with <%= @company.name %></u></h2>
       <h3><b>Company Description</b></h3>
       <h3> <%= @company.description %></h3>
-<<<<<<< HEAD
       <% if current_user.admin %>
       <button class="btn btn-success"><a href="<%= @company.id %>/edit">Edit</a></button>
       <button class="btn btn-info"><a href="/companies">Cancel</a></button>
       <%= button_to "Delete", "/companies/#{@company.id}", method: :delete %>
       <% end %>
     </div>
-
     <div style="float: right;" class="col-xs-6-col-md-6">
     Service  : <%= rating_for @company, 'service' %>
     Seats : <%= rating_for @company, 'seats' %>
     Price  : <%= rating_for @company, 'price' %>
-=======
       <ul class="menu list-inline">
         <% if current_user.admin %>
           <li><button class="btn btn-success"><a href="<%= @company.id %>/edit">Edit</a></button></li>
@@ -29,7 +26,6 @@
       Service  : <%= rating_for @company, 'service' %>
       Seats : <%= rating_for @company, 'seats' %>
       Price  : <%= rating_for @company, 'price' %>
->>>>>>> ef272d45347ea5dad5430b6094ab5e156b76408a
     </div>
   </div>
   <%= render 'comments/comment' %>

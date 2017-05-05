@@ -43,8 +43,5 @@ class CommentsController < ApplicationController
     flash[:success] = "Comment Deleted!"
     redirect_to "/comments"
   end
-<<<<<<< HEAD
 end
-=======
 end
->>>>>>> ef272d45347ea5dad5430b6094ab5e156b76408a

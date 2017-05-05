@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <% @company.comments.each do |comment| %>
 <a href="/users"><strong><%=comment.user.name%></strong></a>
   <%= comment.comment_body %>
@@ -15,9 +14,6 @@
     </div>
   </div>
 <% end %>
-=======
-
-
 <% @company.comments.each do |comment| %> 
 <a href="/users"><strong><%= comment.user.name %></strong></a>
 <p><%= comment.comment_body %><p>
@@ -38,5 +34,3 @@
     </div>
   </form>
 <% end %>
- 
->>>>>>> ef272d45347ea5dad5430b6094ab5e156b76408a
