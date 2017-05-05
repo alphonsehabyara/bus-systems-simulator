@@ -10,13 +10,6 @@
       <%= button_to "Delete", "/bus_routes/#{@bus_route.id}", method: :delete %>
       </div>
       <% end %>
-      <ul class="menu list-inline">
-        <% if current_user.admin %>
-          <li><button class="btn btn-success"><a href="<%= @bus_route.id %>/edit">Edit</a></button></li>
-          <li><button class="btn btn-info"><a href="/bus_routes">Go back</a></button></li>
-          <li><%= button_to "Delete", "/bus_routes/#{@bus_route.id}", method: :delete %></li>
-        <% end %>
-      </ul>
     </div>
   </div>
 </div>
