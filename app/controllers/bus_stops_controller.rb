@@ -57,7 +57,7 @@ class BusStopsController < ApplicationController
   def destroy
     @bus_stop = BusStop.find_by(id: params[:id])
     @bus_stop.destroy
-    flash[:success] = "Bus Stop Deleted!"
+    flash[:success] = "Bus Stop Deleted forever!"
     redirect_to "/bus_stops"
   end
 
